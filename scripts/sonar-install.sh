@@ -14,6 +14,9 @@ sudo yum install java-17-amazon-corretto-devel
 sudo useradd sonarqube
 
 ##  3.. add sonarqube user in the sudoers list or visudo in the wheel group in order to user sudo
+sudo visudo
+## root    ALL=(ALL)       ALL
+## sonarqube    ALL=(ALL)       ALL
 
 ## down the sonarqube community verison using tghe wget command
 
@@ -29,6 +32,10 @@ sudo unzip sonarqube-10.1.0.73491.zip
 
 ## 6.. change the ownership of sonarqube 
 sudo chown -R sonarqube:sonarqube sonarqube-10.1.0.73491
+sudo passwd sonarqube
+sudo passwd ec2-user
+sudo passwd root
+
 su sonarqube
 
 ## 7.. start the server 
